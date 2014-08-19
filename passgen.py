@@ -1,4 +1,3 @@
-from substitution import Substitution
 import sys
 import itertools
 import getopt

@@ -28,6 +28,15 @@ Or have the password list sent to your clipboard so you can paste it wherever yo
 ```
 python passgen.py -c smith
 ```
+
+Complete list of options:
+-o : output file name
+-t : HTTP request target (example: http://mysite.com/login)
+-d : HTTP parameters (example: email=abe@test.com,password={0})
+-n : Append numbers flag.  Appends the numbers 0-9999 to the end of all passwords
+-e : Extra character flag.  Appends 1 of the characters commonly used to meet password complexity requirements to all passwords
+-c : Copy to clipboard flag.  Copys results to the clipboard
+
 Other stuff:
 PassGen only substitutes characters for alpha characters.  This means that if you include numbers or symbols, they will not be replaced with any characters.
 
