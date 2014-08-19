@@ -24,12 +24,12 @@ You can also output password lists to a file using the method below:
 ```
 python passgen.py -o outputFile.txt smith
 ```
-Or have the password list sent to your clipboard so you can past it whereve you like using the method below:
+Or have the password list sent to your clipboard so you can past it wherever you like using the method below:
 ```
 python passgen.py -c smith
 ```
 Other stuff:
-PassGen only substitutes characters for alph characters.  This means that if you includ numbers or symbols, they will not be replaced with any characters.
+PassGen only substitutes characters for alpha characters.  This means that if you includ numbers or symbols, they will not be replaced with any characters.
 
 ###Dependencies:
 - [Requests](http://docs.python-requests.org/en/latest/user/install/#install)
