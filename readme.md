@@ -29,7 +29,7 @@ Or have the password list sent to your clipboard so you can paste it wherever yo
 python passgen.py -c smith
 ```
 Other stuff:
-PassGen only substitutes characters for alpha characters.  This means that if you includ numbers or symbols, they will not be replaced with any characters.
+PassGen only substitutes characters for alpha characters.  This means that if you include numbers or symbols, they will not be replaced with any characters.
 
 ###Dependencies:
 - [Requests](http://docs.python-requests.org/en/latest/user/install/#install)
