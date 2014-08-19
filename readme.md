@@ -24,7 +24,7 @@ You can also output password lists to a file using the method below:
 ```
 python passgen.py -o outputFile.txt smith
 ```
-Or have the password list sent to your clipboard so you can past it wherever you like using the method below:
+Or have the password list sent to your clipboard so you can paste it wherever you like using the method below:
 ```
 python passgen.py -c smith
 ```
