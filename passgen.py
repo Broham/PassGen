@@ -31,16 +31,17 @@ for opt, arg in opts:
 		requestFlag = True
 		target = arg
 	elif opt == "-d": #data for the POST requet
+		requestFlag = True
 		data = arg
 	elif opt == "-c": #copy output to the clipboard
 		copyFlag = True
 	elif opt == "-g": #text to be searched for in POST response
+		requestFlag = True
 		text = arg
 	# elif opt == "-e": #append extra character
 	# 	letters.append(dummyCharacters)
 	elif opt == "-n": #append numbers to end
 		numbersFlag = True
-		print "append all 4 digit combinations of the number list"
 
 #load full or basic password list based on arguments passed in
 passwords = fullSub(password) if fullFlag else basicSub(password)
@@ -68,10 +69,16 @@ elif copyFlag:
 	pyperclip.copy(pwList)
 #make request using passwords
 elif requestFlag:
-	print "Error - make request not implemented"
-
-	payload = {'key1': 'value1', 'key2': 'value2'}
-	print target, data, text
+	#make sure all required values were passed in
+	if data == '':
+		print "You must provide data in order to make a HTTP request.  Example: -d email=test@test.com&password={0}"
+		sys.exit()
+	elif text == '':
+		print "You must specify what text to search for in the response in order to make a HTTP request. Example: -g success:true"
+		sys.exit()
+	elif target == "":
+		print "You must specify a target URL in order to make a HTTP request"
+		sys.exit()
 	makeRequests(target, data, passwords,text)
 else:
 	i = 0
