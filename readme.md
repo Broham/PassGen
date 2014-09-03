@@ -8,7 +8,7 @@ Complete list of options:
 - -f : generate a full password list.  This can make the password list quite lengthy.
 - -n : generate a password list the appends 4 digit numbers to the end of the target password.
 - -o : output file name
-- -t : HTTP request target (example: http://mysite.com/login)
+- -t : HTTP request target (example: http://myTestSite.com/login)
 - -d : HTTP parameters (example: email=abe@test.com,password={0}).  The {0} specifies where the password will be inserted into the data.
 - -g : Text to search for in the HTTP response.  Use this to determine when a password has worked.
 - -n : Append numbers flag.  Appends the numbers 0-9999 to the end of all passwords
@@ -35,8 +35,24 @@ Genearates a large number of potential passwords by generating a list of every c
 python passgen.py -f smith
 ```
 
+###Basic password list output to file
+Create a basic password list and save it to a file.
+
+```
+python passgen.py -o outputFile.txt smith
+```
+
+###Basic password list saved to clipboard
+Create a basic password list and save it to your clipboard so you can paste it elsewhere.
+
+```
+python passgen.py -c smith
+```
+
 ###Basic password list used to make HTTP requests
 Create a basic password list and uses it to make login requests.  If it finds the text "success" in the response it will say which password worked and exit.  Notice that ```&``` must be replaced with ```\&``` in the command line.
+
+When makeing HTTP request you must include a value for target (```-t```), data (```-d```) and  search text (```-g```). 
 
 ```
 python passgen.py -t http://myTestSite.com/login -d email=smith@test.com\&password={0} -g success smith
