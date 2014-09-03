@@ -50,7 +50,7 @@ python passgen.py -c smith
 ```
 
 ###Basic password list used to make HTTP requests
-Create a basic password list and uses it to make login requests.  If it finds the text "success" in the response it will say which password worked and exit.  Notice that ```&``` must be replaced with ```\&``` in the command line.
+Create a basic password list and uses it to make login requests.  In the example below it searches for the text "success" in the response.  If found, it will say which password worked and exit.  Notice that ```&``` must be replaced with ```\&``` in the command line.
 
 When makeing HTTP request you must include a value for target (```-t```), data (```-d```) and  search text (```-g```). 
 
