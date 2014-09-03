@@ -58,7 +58,9 @@ When makeing HTTP request you must include a value for target (```-t```), data (
 python passgen.py -t http://myTestSite.com/login -d email=smith@test.com\&password={0} -g success smith
 ```
 
-Other stuff:
+###Other stuff:
+PassGen should only be used for internal security testing.  
+
 PassGen only substitutes characters for alpha characters.  This means that if you include numbers or symbols, they will not be replaced with any characters.
 
 ###Dependencies:
