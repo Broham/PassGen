@@ -4,15 +4,17 @@
 PassGen is intended to generate a potential password list for a target word using different combinations of capital letters and common substitutions.  It can also be used to make HTTP requests to see if any passwords from the list are valid.
 
 Complete list of options:
-- no options : generates a password list by replaceing the first character of the password and appending an extra character to the end.
-- -f : generate a full password list.  This can make the password list quite lengthy.
-- -n : generate a password list the appends 4 digit numbers to the end of the target password.
-- -o : output file name
-- -t : HTTP request target (example: http://mysite.com/login)
-- -d : HTTP parameters (example: email=abe@test.com,password={0}).  The {0} specifies where the password will be inserted into the data.
-- -g : Text to search for in the HTTP response.  Use this to determine when a password has worked.
-- -n : Append numbers flag.  Appends the numbers 0-9999 to the end of all passwords
-- -c : Copy to clipboard flag.  Copys results to the clipboard
+```
+no options : generates a password list by replaceing the first character of the password and appending an extra character to the end.
+-f : generate a full password list.  This can make the password list quite lengthy.
+-n : generate a password list the appends 4 digit numbers to the end of the target password.
+-o : output file name
+-t : HTTP request target (example: http://mysite.com/login)
+-d : HTTP parameters (example: email=abe@test.com,password={0}).  The {0} specifies where the password will be inserted into the data.
+-g : Text to search for in the HTTP response.  Use this to determine when a password has worked.
+-n : Append numbers flag.  Appends the numbers 0-9999 to the end of all passwords
+-c : Copy to clipboard flag.  Copys results to the clipboard
+```
 
 ##Examples:
 ###Basic Usage:
