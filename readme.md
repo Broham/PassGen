@@ -4,7 +4,7 @@
 PassGen is intended to generate a potential password list for a target word using different combinations of capital letters and common substitutions.  It can also be used to make HTTP requests to see if any passwords from the list are valid.
 
 Complete list of options:
-no options : generates a password list by replaceing the first character of the password and appending an extra character to the end.
+- no options : generates a password list by replaceing the first character of the password and appending an extra character to the end.
 - -f : generate a full password list.  This can make the password list quite lengthy.
 - -n : generate a password list the appends 4 digit numbers to the end of the target password.
 - -o : output file name
