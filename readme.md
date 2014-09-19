@@ -1,5 +1,5 @@
 #PassGen
-##A targeted password brute force tool
+##A targeted password dictionary attack tool
 
 PassGen is intended to generate a potential password list for a target word using different combinations of capital letters and common substitutions.  It can also be used to make HTTP requests to see if any passwords from the list are valid.
 
