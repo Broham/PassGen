@@ -64,8 +64,8 @@ elif copyFlag:
 	i=0
 	for password in passwords:
 		i+=1
- 		pwList += "".join(password) + '\n'
- 	print `i` + " passwords copied to the clipboard."
+		pwList += "".join(password) + '\n'
+	print `i` + " passwords copied to the clipboard."
 	pyperclip.copy(pwList)
 #make request using passwords
 elif requestFlag:
