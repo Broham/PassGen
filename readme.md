@@ -35,6 +35,18 @@ Genearates a large number of potential passwords by generating a list of every c
 python passgen.py -f smith
 ```
 
+Generates 76 passwords like so:
+
+```
+smith1
+smith2
+smith3
+...
+5mith&
+5mith*
+5mith?
+```
+
 ###Basic password list output to file
 Create a basic password list and save it to a file.
 
