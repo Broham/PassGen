@@ -12,7 +12,8 @@ def fullSub(password):
 			letters.append(subDict[val])
 		else:
 			letters.append(val)
-	return product(*letters)
+	# return list(product(*letters))
+	return [''.join(item) for item in product(*letters)]
 
 #returns a list of possible passwords by replacing the first letter with common substitutions and appending numbers and letters to the end.  If numbers flag is set then append numbers to end
 def basicSub(password, numbers=False):
