@@ -46,7 +46,6 @@ if __name__ == '__main__':
 	parser.add_argument("password",nargs="*")
 	args = parser.parse_args()
 
-	#get the password and options from the command line
 	password = args.password[0]
 
 	#load full or basic password list based on arguments passed in
