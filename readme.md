@@ -1,7 +1,9 @@
 # PassGen
 ## A targeted password dictionary attack tool
 
-PassGen is intended to generate a potential password list for a target word using different combinations of capital letters and common substitutions.  It can also be used to make HTTP requests to see if any passwords from the list are valid.
+PassGen is a security tool intended to generate a potential password list for a target using different combinations of capital 
+letters and common substitutions.  It can also be used to make HTTP requests to see if any passwords from the list are valid.  
+It is intended to be used for internal security testing to identify any weak passwords that might be in use.
 
 Complete list of options:
 - no options : generates a password list by replaceing the first character of the password and appending an extra character to the end.
