@@ -5,6 +5,8 @@ import pyperclip
 from substitute import fullSub
 from substitute import basicSub
 from substitute import appendNumbers
+import argparse
+
 
 def printPasswords(passwords):
 	for password in passwords:
@@ -31,70 +33,57 @@ def makeRequests(target, data, passwords, findText):
 			return
 	print "No matches found for passwords."
 
+parser = argparse.ArgumentParser()
+
 if __name__ == '__main__':
+	parser.add_argument("-o", "--outputFile", help="The file that the password list will be written to.")
+	parser.add_argument("-f", "--full", help="Full password list flag.  This can generate a very large password", action="store_true")
+	parser.add_argument("-c", "--copy", help="Copy password list result to the clipboard.", action="store_true")
+	parser.add_argument("-n", "--numbers", help="Append numbers flag.", action="store_true")
+	parser.add_argument("-t", "--target", help="The target of the HTTP POST request.")
+	parser.add_argument("-d", "--data", help="The data for the post request.")
+	parser.add_argument("-g", "--search", help="The text to search for in POST respose that will indicate a successful login.")
+	parser.add_argument("password",nargs="*")
+	args = parser.parse_args()
+
+	print('args.outputFile',args.outputFile)
+	print('args.full',args.full)
+	print('args.copy',args.copy)
+	print('args.numbers',args.numbers)
+	print('args.target',args.target)
+	print('args.data',args.data)
+	print('args.search',args.search)
+	print('args.password',args.password)
 
 	#get the password and options from the command line
-	opts, args = getopt.getopt(sys.argv[1:], ':o:t:d:g:necf')
-	print 'opts', opts
-	print 'args', args
-	password = args[0].lower()
-
-	outputFile = ''
-	target = '' 
-	data = ''
-	text = ''
-	numbersFlag = False
-	copyFlag = False
-	fullFlag = False
-	requestFlag = False
-
-	for opt, arg in opts:
-		if opt == '-o': #output file
-			outputFile = arg
-		if opt == '-f': #generate full password list
-			fullFlag = True 
-		elif opt == '-t': #target of the POST request
-			requestFlag = True
-			target = arg
-		elif opt == '-d': #data for the POST requet
-			requestFlag = True
-			data = arg
-		elif opt == '-c': #copy output to the clipboard
-			copyFlag = True
-		elif opt == '-g': #text to be searched for in POST response
-			requestFlag = True
-			text = arg
-		# elif opt == '-e': #append extra character
-		# 	letters.append(dummyCharacters)
-		elif opt == '-n': #append numbers to end
-			numbersFlag = True
+	password = args.password[0]
 
 	#load full or basic password list based on arguments passed in
-	if fullFlag:
+	if args.full:
 		passwords = fullSub(password)
-	elif numbersFlag:
+	elif args.numbers:
 		passwords = appendNumbers(password)
 	else:
 		passwords = basicSub(password)
 
 	#save passwords to file
-	if outputFile != '':
-		writePasswordsToFile(outputFile, passwords)
+	if args.outputFile != None:
+		writePasswordsToFile(args.outputFile, passwords)
 	#copy passwords to clipboard
-	elif copyFlag:
+	elif args.copy:
 		writePasswordsToClipboard(passwords)
 	#make request using passwords
-	elif requestFlag:
+	elif args.target != None:
 		#make sure all required values were passed in
-		if data == '':
+		if args.data == None:
 			print 'You must provide data in order to make a HTTP request.  Example: -d email=test@test.com&password={0}'
 			sys.exit()
-		elif text == '':
+		elif args.search == None:
 			print 'You must specify what text to search for in the response in order to make a HTTP request. Example: -g success:true'
 			sys.exit()
-		elif target == '':
+		elif args.target == None:
 			print 'You must specify a target URL in order to make a HTTP request'
 			sys.exit()
-		makeRequests(target, data, passwords,text)
+		makeRequests(args.target, args.data, passwords,args.search)
 	else:
 		printPasswords(passwords)
