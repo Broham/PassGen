@@ -46,15 +46,6 @@ if __name__ == '__main__':
 	parser.add_argument("password",nargs="*")
 	args = parser.parse_args()
 
-	print('args.outputFile',args.outputFile)
-	print('args.full',args.full)
-	print('args.copy',args.copy)
-	print('args.numbers',args.numbers)
-	print('args.target',args.target)
-	print('args.data',args.data)
-	print('args.search',args.search)
-	print('args.password',args.password)
-
 	#get the password and options from the command line
 	password = args.password[0]
 
