@@ -8,7 +8,7 @@ from passgen import writePasswordsToFile
 class PasswordOutputTest(unittest.TestCase):
 
   passwords = ['password1', 'password2', 'password3']
-  passwordData = 'password1\npassword2\npassword3\n'
+  passwordData = 'password1\npassword2\npassword3'
   fileName = 'test_passwords.txt'
   def test_write_to_file(self):
     writePasswordsToFile('test_passwords.txt',self.passwords)

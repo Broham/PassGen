@@ -12,18 +12,13 @@ def printPasswords(passwords):
 	print '%s passwords generated.' % len(passwords)
 
 def writePasswordsToClipboard(passwords):
-	pwList = ''
-	i=0
-	for password in passwords:
-		i+=1
-		pwList += ''.join(password) + '\n'
-	print `i` + ' passwords copied to the clipboard.'
+	pwList = '\n'.join(passwords)
+	print '%s passwords copied to the clipboard.' % (len(passwords))
 	pyperclip.copy(pwList)
 
 def writePasswordsToFile(outputFile, passwords):
-	f = open(outputFile, 'w')
-	for password in passwords:
-		f.write(''.join(password) + '\n')
+	with open(outputFile, 'w') as f:
+		f.write('\n'.join(passwords))
 	print '%s passwords written to %s' % (len(passwords), outputFile)
 	f.close()
 
