@@ -7,7 +7,7 @@ from lists import numbersOnly
 def fullSub(password):
 	letters = []
 	#place substitution sets into the letters array
-	for i,val in enumerate(password):
+	for val in password:
 		if val in subDict.keys():
 			letters.append(subDict[val])
 		else:

@@ -44,7 +44,6 @@ for opt, arg in opts:
 		numbersFlag = True
 
 #load full or basic password list based on arguments passed in
-passwords = fullSub(password) if fullFlag else basicSub(password)
 if fullFlag:
 	passwords = fullSub(password)
 elif numbersFlag:
