@@ -75,7 +75,7 @@ python passgen.py -t http://myTestSite.com/login -d email=smith@test.com\&passwo
 ```
 
 ### Other stuff:
-PassGen should only be used for internal security testing.  
+**Again - PassGen should only be used for internal security testing.  **
 
 PassGen only substitutes characters for alpha characters.  This means that if you include numbers or symbols, they will not be replaced with any characters.
 
